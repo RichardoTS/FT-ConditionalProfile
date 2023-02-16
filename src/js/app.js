@@ -31,7 +31,12 @@ function render(variables = {}) {
   if (variables.name == null) variables.name = "Lucy";
   if (variables.lastname == null) variables.lastname = "Boilett";
   if (variables.role == null) variables.role = "Web Developer";
-  if (variables.city == "Miami") variables.country = "USA";
+  if (variables.city == null) variables.city = " ";
+  if (variables.country == null) variables.country = " ";
+  if (variables.city == "Miami") variables.country = ", USA";
+  if (variables.city == "Munich") variables.country = ", Germany";
+  if (variables.city == "Toronto") variables.country = ", Canada";
+  if (variables.city == "Caracas") variables.country = ", Venezuela";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -39,7 +44,7 @@ function render(variables = {}) {
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${variables.name} ${variables.lastname}</h1>
           <h2>${variables.role}</h2>
-          <h3>${variables.city}, ${variables.country}</h3>          
+          <h3>${variables.city} ${variables.country}</h3>          
           <ul class="${variables.socialMediaPosition}">
             <li><a href="https://twitter.com/4geeksacademy" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy" target="_blank"><i class="fa-brands fa-github"></i></a></li>
