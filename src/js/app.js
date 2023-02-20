@@ -37,6 +37,10 @@ function render(variables = {}) {
   if (variables.city == "Munich") variables.country = ", Germany";
   if (variables.city == "Toronto") variables.country = ", Canada";
   if (variables.city == "Caracas") variables.country = ", Venezuela";
+  if (variables.twitter == null) variables.twitter = "4geeksacademycl";
+  if (variables.github == null) variables.github = "4GeeksAcademy";
+  if (variables.linkedin == null) variables.linkedin = "4geeksacademy";
+  if (variables.instagram == null) variables.instagram = "4geeksacademycl";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -70,7 +74,7 @@ window.onload = function() {
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
